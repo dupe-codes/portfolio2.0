@@ -1,0 +1,8 @@
+{
+  "name": "Portfolio2.0",
+  "version": "0.1.0",
+  "description": "Nick Dupoux's personal portfolio, reimagined",
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}

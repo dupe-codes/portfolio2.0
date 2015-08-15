@@ -1,0 +1,36 @@
+# All the data and information to be displayed on
+# my portfolio
+# TODO: Generate this yaml file from an easier to quickly write format
+
+projects:
+  description: my personal projects
+  entries:
+    - SheSays:
+        description: An anonymous rate and review platform for women in technology
+        tech:
+          - python
+          - django
+        links:
+          - name: github
+            url: https://github.com/njdup/shesays
+          - name: website
+            url: http://www.shesays.co/
+          - name: angellist
+            url: https://angel.co/shesays
+          - name: DemoDayPitch
+            url: https://www.youtube.com/watch?v=x6o6KsipipQ
+
+    - Serve:
+        description: A platform for running useful scripts via SMS
+        tech:
+          - python
+          - twilio
+          - node.js
+
+jokes:
+  description: A collection of jokes that make me chuckle
+  entries:
+    - joke: 
+        My colleague just told me to “find them on Tinder”. After hours of searching, I just cannot find that IRC channel.
+      source:
+        twitter: @iamdevloper
