@@ -17,6 +17,11 @@ gulp.task('start-server', function() {
   });
 });
 
+
+// TODO: Figure out how to run webpack server from gulp
+// for now, use npm scripts
+//gulp.task('dev-server', function() {});
+
 gulp.task('clean', function(cb) {
   del([
     'build/'
@@ -43,5 +48,5 @@ gulp.task('lint', function() {
 });
 
 gulp.task('start', function(cb) {
-  runSequence(['env-setup', 'start-server'], cb);
+  runSequence(['env-setup', 'dev-server', 'start-server'], cb);
 });

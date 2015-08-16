@@ -30,9 +30,7 @@ export function getPacketPath(destIP, callback) {
   readline.createInterface({
     input: process.stdout,
     terminal: false
-  }).on('line', function(line) {
-    output.push(line);
-  });
+  }).on('line', (line) => output.push(line));
 
   process.on('close', function traceDone(retCode) {
     if (retCode !== 0) {

@@ -7,6 +7,12 @@
     "url": "https://github.com/njdup/portfolio2.0.git"
   },
   "main": "build/server/portfolio.js",
+  "scripts": {
+    "dev-server": "node build/server/webpack",
+    "server": "nodemon build/server/portfolio",
+    "watch-js": "./node_modules/.bin/babel src -d build --experimental -w",
+    "start": "npm run watch-js & npm run dev-server & npm run server"
+  },
   "dependencies": {
     "async": "^1.4.1",
     "body-parser": "^1.13.3",

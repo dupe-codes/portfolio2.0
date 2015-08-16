@@ -9,6 +9,8 @@ import bodyParser from 'body-parser';
 import logger from 'morgan';
 import methodOverride from 'method-override';
 import path from 'path';
+import React from 'react';
+import Router from 'react-router';
 
 import * as config from '../config';
 const app = express();
@@ -38,12 +40,19 @@ app.set('json spaces', 2);
 import apiRouter from './api/dup.api';
 import tracingRouter from './api/tracing.api';
 
-app.get('/', function(req, res) {
-  res.send('Hello world!<br/>xoxo, Nick');
-});
-
+// API routes
 app.use('/api/', apiRouter);
 app.use('/tracing', tracingRouter);
+
+// Main application routes
+import routes from '../shared/routes';
+
+app.get('/*', function(req, res) {
+  Router.run(routes, req.url, (Handler) => {
+    let content = React.renderToString(<Handler />);
+    res.render('index', { content: content });
+  });
+});
 
 // Catch 404 errors and forward to error handler
 app.use(function(req, res, next) {
