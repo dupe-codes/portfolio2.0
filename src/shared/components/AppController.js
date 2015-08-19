@@ -1,7 +1,22 @@
 import React from 'react';
+import Navbar from './Navbar'
+import APIButtonList from './APIButtonList'
 
 export default class AppController extends React.Component {
   render() {
-    return <div><h1>Welcome to @njdup's portfolio!</h1></div>
+    return (
+      <div>
+        <Navbar items={[
+          {text: 'github', link: 'https://github.com/njdup'}, 
+          {text: 'linkedin', link: 'https://www.linkedin.com/in/nicholasdupoux'},
+          {text: 'twitter', link: 'https://twitter.com/NJDup'}
+        ]} />
+
+        <APIButtonList endpoints={[
+          {name: 'projects', url: '/api/projects'},
+          {name: 'jokes', url: '/api/jokes'}
+        ]}/>
+      </div>
+    );
   }
 }
