@@ -1,6 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar'
-import APIButtonList from './APIButtonList'
+import Navbar from './Navbar';
+import APIButtonList from './APIButtonList';
+import DataDisplay from './DataDisplay';
 
 export default class AppController extends React.Component {
   render() {
@@ -16,6 +17,8 @@ export default class AppController extends React.Component {
           {name: 'projects', url: '/api/projects'},
           {name: 'jokes', url: '/api/jokes'}
         ]}/>
+
+        <DataDisplay />
       </div>
     );
   }

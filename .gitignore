@@ -5,3 +5,5 @@ assets/static/lib/
 dev-env.sh
 
 build/
+
+*.swp
