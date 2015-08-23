@@ -7,3 +7,6 @@ dev-env.sh
 build/
 
 *.swp
+
+# Ignore generated clientside config
+src/client/clientConfig.js
