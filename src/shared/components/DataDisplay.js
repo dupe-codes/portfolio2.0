@@ -33,9 +33,11 @@ export default class DataDisplay extends React.Component {
 
   render() {
     return (
-      <Highlight className='json'>
-        {this.state.data}
-      </Highlight>
+      <div className="row">
+        <Highlight className='json'>
+          {this.state.data}
+        </Highlight>
+      </div>
     );
   }
 }

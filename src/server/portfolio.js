@@ -23,7 +23,7 @@ app.set('views', './views');
 app.set('view engine', 'jade');
 
 // Expose static files as residing at top-level domain
-app.use(express.static(path.join(__dirname, '../../assets/static/')))
+app.use(express.static(path.join(__dirname, '../../assets/static/')));
 
 // Configure to get all data from request bodies
 app.use(bodyParser.json());

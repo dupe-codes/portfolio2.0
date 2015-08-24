@@ -1,5 +1,6 @@
 import React from 'react';
 import { Actions } from '../stores/APIDataStore';
+import { addRoute } from '../stores/MapRouteStore';
 
 export default class APIButton extends React.Component {
   constructor() {
@@ -11,9 +12,23 @@ export default class APIButton extends React.Component {
 
   fetchData(event) {
     console.log('Fetching data from ' + this.props.endpoint.url);
-    $.get(this.props.endpoint.url, (result) => {
+
+    // First trace route to client
+    $.get('/tracing', (result) => {
+      console.log(result);
+      let routeLines = result.map(function(location) {
+        return [Number(location.latitude), Number(location.longitude)];
+      });
+
+      addRoute(routeLines);
+
+      // Then get and display actual data
+      $.get(this.props.endpoint.url, (result) => {
         Actions.dataLoaded(JSON.stringify(result, null, '  '));
+      });
+
     });
+
   }
 
   render() {

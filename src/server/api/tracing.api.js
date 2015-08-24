@@ -14,6 +14,7 @@ let router = new Router();
 // TODO: Add caching of path to specific IP
 router.get('/', function(req, res) {
   let clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  console.log('Tracing route to %s', clientIP );
   clientIP = '170.149.100.10'; // New York Times in NY, NY
   //clientIP = '74.125.224.72' // Google in MV, CA
   getPacketPath(clientIP, function (packetPath, err) {
